@@ -106,5 +106,10 @@
   <ItemGroup>
     <Resource Include="638055.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ressource\VideoBike3.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
