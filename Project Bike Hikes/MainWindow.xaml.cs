@@ -1,88 +1,19 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using Project_Bike_Hikes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
-
 namespace Project_Bike_Hikes
 {
 
-    public enum Difficulty
-    {
-        Easy,
-        Low,
-        Medium,
-        Hard,
-        Impossible
-    }
-    public enum BikeType
-    {
-        Road,
-        Mountain,
-        Hybrid,
-        Gravel,
-        Electric,
-        BMX
-    }
-
-    public enum Crowds
-    {
-        Nobody,
-        Some,
-        Average,
-        Lot,
-        Impossible
-    }
-
-    public enum Weather
-    {
-        Sunny,
-        Cloudy,
-        Rainy,
-        Stromy,
-        Foggy,
-        Hot,
-        Cold,
-        Humid
-    }
-
-    public class Ride
-    {
-        public string Name;
-        public List<Difficulty> Diff;
-        public List<BikeType> Type;
-        public List<Crowds> Crowds;
-        public List<Weather> Weather;
-        public string BestTime;
-        public Image Map;
-
-        public Ride()
-        {
-        }
-
-        public Ride(string name, List<Difficulty> diff, List<BikeType> types, List<Crowds> crowds, List<Weather> weather, string bestTime, Image map)
-        {
-
-            Name = name;
-            Diff = diff;
-            Type = types;
-            Crowds = crowds;
-            Weather = weather;
-            BestTime = bestTime;
-            Map = map;
-
-
-        }
-
-        // Initalize all ride here
-
-
-
-    }
-
     public partial class MainWindow : Window
     {
+
+        List<Ride> list;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -95,14 +26,12 @@ namespace Project_Bike_Hikes
 
         }
 
-        List<Ride> list;
-
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
 
             BackgroundVideo.Play();
 
-           list = new List<Ride>();
+            list = new List<Ride>();
 
             Ride r1 = new Ride()
             {
@@ -112,7 +41,8 @@ namespace Project_Bike_Hikes
                 Crowds = new List<Crowds> { Crowds.Some },
                 Weather = new List<Weather> { Weather.Sunny, Weather.Cloudy },
                 BestTime = "8AM to 7PM",
-                Map = new Image()
+                Map = new Image(),
+                Score = 0
             };
 
             Ride r2 = new Ride()
@@ -123,7 +53,8 @@ namespace Project_Bike_Hikes
                 Crowds = new List<Crowds> { Crowds.Nobody, Crowds.Some },
                 Weather = new List<Weather> { Weather.Cold, Weather.Foggy },
                 BestTime = "6AM to 3PM",
-                Map = new Image()
+                Map = new Image(),
+                Score = 1
             };
 
             Ride r3 = new Ride()
@@ -134,7 +65,8 @@ namespace Project_Bike_Hikes
                 Crowds = new List<Crowds> { Crowds.Average },
                 Weather = new List<Weather> { Weather.Cloudy, Weather.Humid },
                 BestTime = "9AM to 6PM",
-                Map = new Image()
+                Map = new Image(),
+                Score = 2
             };
 
             Ride r4 = new Ride()
@@ -145,7 +77,8 @@ namespace Project_Bike_Hikes
                 Crowds = new List<Crowds> { Crowds.Lot },
                 Weather = new List<Weather> { Weather.Sunny, Weather.Cloudy },
                 BestTime = "5AM to 9AM",
-                Map = new Image()
+                Map = new Image(),
+                Score = 3
             };
 
             Ride r5 = new Ride()
@@ -156,7 +89,8 @@ namespace Project_Bike_Hikes
                 Crowds = new List<Crowds> { Crowds.Nobody },
                 Weather = new List<Weather> { Weather.Hot, Weather.Sunny },
                 BestTime = "6AM to 11AM",
-                Map = new Image()
+                Map = new Image(),
+                Score = 4
             };
 
             Ride r6 = new Ride()
@@ -167,7 +101,8 @@ namespace Project_Bike_Hikes
                 Crowds = new List<Crowds> { Crowds.Some },
                 Weather = new List<Weather> { Weather.Foggy, Weather.Cloudy },
                 BestTime = "10AM to 5PM",
-                Map = new Image()
+                Map = new Image(),
+                Score = 5
             };
 
             Ride r7 = new Ride()
@@ -178,7 +113,8 @@ namespace Project_Bike_Hikes
                 Crowds = new List<Crowds> { Crowds.Some, Crowds.Nobody },
                 Weather = new List<Weather> { Weather.Cloudy, Weather.Rainy },
                 BestTime = "9AM to 4PM",
-                Map = new Image()
+                Map = new Image(),
+                Score = 6
             };
 
             Ride r8 = new Ride()
@@ -189,7 +125,8 @@ namespace Project_Bike_Hikes
                 Crowds = new List<Crowds> { Crowds.Average },
                 Weather = new List<Weather> { Weather.Sunny, Weather.Cloudy },
                 BestTime = "11AM to 8PM",
-                Map = new Image()
+                Map = new Image(),
+                Score = 7
             };
 
             Ride r9 = new Ride()
@@ -200,7 +137,8 @@ namespace Project_Bike_Hikes
                 Crowds = new List<Crowds> { Crowds.Lot, Crowds.Impossible },
                 Weather = new List<Weather> { Weather.Cloudy, Weather.Humid },
                 BestTime = "7PM to 11PM",
-                Map = new Image()
+                Map = new Image(),
+                Score = 8
             };
 
             Ride r10 = new Ride()
@@ -211,7 +149,8 @@ namespace Project_Bike_Hikes
                 Crowds = new List<Crowds> { Crowds.Average, Crowds.Lot },
                 Weather = new List<Weather> { Weather.Sunny, Weather.Cold },
                 BestTime = "12PM to 6PM",
-                Map = new Image()
+                Map = new Image(),
+                Score = 9
             };
 
             list.Add(r1);
@@ -266,10 +205,25 @@ namespace Project_Bike_Hikes
 
         private void BackgroundVideo_MediaEnded(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Video ended");
+           
             BackgroundVideo.Position = TimeSpan.Zero;
             BackgroundVideo.Play();
-            Console.WriteLine("Video replay");
+            
+        }
+
+        private void BestMatchListBox_Selected(object sender, RoutedEventArgs e)
+        {
+            if (listBox1.SelectedItem == null) return; 
+            
+            string choix = listBox1.SelectedItem.ToString(); 
+            
+            if (choix == "Fenêtre A") { 
+                 
+            } 
+            else if (choix == "Fenêtre B") { 
+                FormB fB = new FormB(); 
+                fB.Show(); 
+            }
         }
     }
 
