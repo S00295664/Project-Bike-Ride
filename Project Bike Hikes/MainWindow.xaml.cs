@@ -213,17 +213,7 @@ namespace Project_Bike_Hikes
 
         private void BestMatchListBox_Selected(object sender, RoutedEventArgs e)
         {
-            if (listBox1.SelectedItem == null) return; 
             
-            string choix = listBox1.SelectedItem.ToString(); 
-            
-            if (choix == "Fenêtre A") { 
-                 
-            } 
-            else if (choix == "Fenêtre B") { 
-                FormB fB = new FormB(); 
-                fB.Show(); 
-            }
         }
     }
 
