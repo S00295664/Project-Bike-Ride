@@ -17,6 +17,8 @@ namespace Project_Bike_Hikes
         public MainWindow()
         {
             InitializeComponent();
+            
+
             DiffBox.ItemsSource = Enum.GetValues(typeof(Difficulty));
             DiffBox_Copy.ItemsSource = Enum.GetValues(typeof(BikeType));
             DiffBox_Copy1.ItemsSource = Enum.GetValues(typeof(Weather));
@@ -26,12 +28,7 @@ namespace Project_Bike_Hikes
 
         }
 
-        private void Window_Loaded_1(object sender, RoutedEventArgs e)
-        {
-
-            BackgroundVideo.Play();
-
-            list = new List<Ride>();
+        public List<Ride> load_ride(List<Ride> list) {
 
             Ride r1 = new Ride()
             {
@@ -164,12 +161,29 @@ namespace Project_Bike_Hikes
             list.Add(r9);
             list.Add(r10);
 
+            return list;
+
+        }
+
+        private void Window_Loaded_1(object sender, RoutedEventArgs e)
+        {
+
+            BackgroundVideo.Play();
+
+            list = new List<Ride>();
+
+            list = load_ride(list);
+
             DiffBox.SelectionChanged += FilterRides;
             DiffBox_Copy.SelectionChanged += FilterRides;
             DiffBox_Copy1.SelectionChanged += FilterRides;
             DiffBox_Copy3.SelectionChanged += FilterRides;
 
         }
+
+
+
+
 
         private void FilterRides(object sender, SelectionChangedEventArgs e)
         {
@@ -213,7 +227,19 @@ namespace Project_Bike_Hikes
 
         private void BestMatchListBox_Selected(object sender, RoutedEventArgs e)
         {
-            
+
+        }
+
+        private void BestMatchListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach(Ride ride in list) {
+                if (BestMatchListBox.SelectedItem == ride.Name)
+                {
+                    var page = new RidePage(ride);
+                    page.Show();
+                    this.Close();
+                }
+            }
         }
     }
 

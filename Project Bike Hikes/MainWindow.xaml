@@ -6,8 +6,8 @@
             xmlns:local="clr-namespace:Project_Bike_Hikes"
             mc:Ignorable="d"
             Title="Bike Ride"
-            ResizeMode="NoResize"
-            WindowState="Maximized" Loaded="Window_Loaded_1"
+            Loaded="Window_Loaded_1"
+            WindowState="Maximized" 
             WindowStyle="SingleBorderWindow"
             AllowsTransparency="False"
             Background="Transparent" Height="933" Width="1658"
@@ -51,7 +51,7 @@
                             <TranslateTransform X="0.73"/>
                         </TransformGroup>
                     </TextBlock.RenderTransform><Run Text="Best Match"/><Run Language="en-gb" Text=" "/><Run Text="Found :"/></TextBlock>
-                <ListBox x:Name="BestMatchListBox" HorizontalAlignment="Left" Height="201" Margin="7,49,0,0" VerticalAlignment="Top" Width="389" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#33808080" Foreground="White"    />
+                <ListBox x:Name="BestMatchListBox" HorizontalAlignment="Left" Height="201" Margin="7,49,0,0" VerticalAlignment="Top" Width="389" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#33808080" Foreground="White" SelectionChanged="BestMatchListBox_SelectionChanged"    />
                 <TextBlock HorizontalAlignment="Left" Margin="437,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontStyle="Italic" FontFamily="Sitka Banner" Width="137" Foreground="White" Background="#66484848"><Run Text="Trending Ride"/><Run Language="en-gb" Text=" :"/></TextBlock>
                 <ListBox HorizontalAlignment="Left" Height="201" Margin="436,49,0,0" VerticalAlignment="Top" Width="221" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#33FFFFFF" Foreground="White"/>
             </Grid>
