@@ -1,6 +1,4 @@
-﻿using Microsoft.SqlServer.Server;
-using Project_Bike_Hikes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
