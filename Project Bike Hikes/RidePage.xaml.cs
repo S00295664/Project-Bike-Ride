@@ -14,16 +14,10 @@ namespace Project_Bike_Hikes
         {
             actual = ride;
             InitializeComponent();
-            BackgroundVideo.Play();
+            
         }
 
-        private void BackgroundVideo_MediaEnded(object sender, RoutedEventArgs e)
-        {
 
-            BackgroundVideo.Position = TimeSpan.Zero;
-            BackgroundVideo.Play();
-
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

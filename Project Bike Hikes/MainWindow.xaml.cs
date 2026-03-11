@@ -11,6 +11,7 @@ namespace Project_Bike_Hikes
     {
 
         List<Ride> list;
+        
 
         public MainWindow()
         {
@@ -166,6 +167,10 @@ namespace Project_Bike_Hikes
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
 
+            Random rnd = new Random();
+            double nb = rnd.Next(70);
+            
+            BackgroundVideo.Position = TimeSpan.FromSeconds(nb);
             BackgroundVideo.Play();
 
             list = new List<Ride>();
@@ -176,6 +181,10 @@ namespace Project_Bike_Hikes
             DiffBox_Copy.SelectionChanged += FilterRides;
             DiffBox_Copy1.SelectionChanged += FilterRides;
             DiffBox_Copy3.SelectionChanged += FilterRides;
+
+
+            var trending = list.AsEnumerable();
+            Trending.ItemsSource = trending.Where(r => r.Score > 5).Select(r => r.Name).ToList();
 
         }
 
@@ -217,8 +226,10 @@ namespace Project_Bike_Hikes
 
         private void BackgroundVideo_MediaEnded(object sender, RoutedEventArgs e)
         {
-           
-            BackgroundVideo.Position = TimeSpan.Zero;
+
+            Random rnd = new Random();
+            double nb = rnd.Next();
+            BackgroundVideo.Position = TimeSpan.FromSeconds(nb);
             BackgroundVideo.Play();
             
         }
@@ -233,6 +244,21 @@ namespace Project_Bike_Hikes
             foreach(Ride ride in list) {
                 if (BestMatchListBox.SelectedItem == ride.Name)
                 {
+                    var page = new RidePage(ride);
+                    page.Show();
+                    this.Close();
+                }
+            }
+        }
+
+        private void Trending_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+            foreach (Ride ride in list)
+            {
+                if (Trending.SelectedItem == ride.Name)
+                {
+                    
                     var page = new RidePage(ride);
                     page.Show();
                     this.Close();
