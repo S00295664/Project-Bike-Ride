@@ -30,5 +30,12 @@ namespace Project_Bike_Hikes
         {
             RideName.Text = actual.Name;
         }
+
+        private void BIKE_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string type = "";
+            foreach (var item in actual.Type) type += item.ToString() + " / ";
+            BikeType.Text = "Type of Bike Recommanded : " + type;
+        }
     }
 }

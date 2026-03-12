@@ -256,7 +256,7 @@ namespace Project_Bike_Hikes
             
             foreach (Ride ride in list)
             {
-                if (Trending.SelectedItem == ride.Name)
+                if (Trending.SelectedItem == ride.Name )
                 {
                     
                     var page = new RidePage(ride);
