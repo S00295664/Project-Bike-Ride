@@ -26,9 +26,10 @@ namespace Project_Bike_Hikes
     public enum Crowds
     {
         Nobody,
+        Few,
         Some,
         Average,
-        Lot,
+        Many,
         Impossible
     }
 
@@ -41,6 +42,7 @@ namespace Project_Bike_Hikes
         Foggy,
         Hot,
         Cold,
+        Windy,
         Humid
     }
 
@@ -53,14 +55,14 @@ namespace Project_Bike_Hikes
         public List<Crowds> Crowds;
         public List<Weather> Weather;
         public string BestTime;
-        public Image Map;
+        public string Map;
         public int Score;
 
         public Ride()
         {
         }
 
-        public Ride(string name, List<Difficulty> diff, List<BikeType> types, List<Crowds> crowds, List<Weather> weather, string bestTime, Image map, int score)
+        public Ride(string name, List<Difficulty> diff, List<BikeType> types, List<Crowds> crowds, List<Weather> weather, string bestTime, string map, int score)
         {
 
             Name = name;

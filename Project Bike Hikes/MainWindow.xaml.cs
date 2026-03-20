@@ -31,122 +31,242 @@ namespace Project_Bike_Hikes
 
             Ride r1 = new Ride()
             {
-                Name = "Coastal Breeze Ride",
-                Diff = new List<Difficulty> { Difficulty.Easy, Difficulty.Low },
+                Name = "Wild Atlantic Way – Sligo Coast",
+                Diff = new List<Difficulty> { Difficulty.Easy },
                 Type = new List<BikeType> { BikeType.Road, BikeType.Hybrid },
                 Crowds = new List<Crowds> { Crowds.Some },
                 Weather = new List<Weather> { Weather.Sunny, Weather.Cloudy },
-                BestTime = "8AM to 7PM",
-                Map = new Image(),
-                Score = 0
+                BestTime = "9AM to 8PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|54.272,-8.514|54.30,-8.60|54.34,-8.55&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 9
             };
 
             Ride r2 = new Ride()
             {
-                Name = "Mountain Peak Challenge",
-                Diff = new List<Difficulty> { Difficulty.Hard, Difficulty.Impossible },
-                Type = new List<BikeType> { BikeType.Mountain, BikeType.Electric },
-                Crowds = new List<Crowds> { Crowds.Nobody, Crowds.Some },
-                Weather = new List<Weather> { Weather.Cold, Weather.Foggy },
-                BestTime = "6AM to 3PM",
-                Map = new Image(),
-                Score = 1
+                Name = "Great Western Greenway – Mayo",
+                Diff = new List<Difficulty> { Difficulty.Easy, Difficulty.Low },
+                Type = new List<BikeType> { BikeType.Hybrid, BikeType.Road },
+                Crowds = new List<Crowds> { Crowds.Many },
+                Weather = new List<Weather> { Weather.Cloudy, Weather.Windy },
+                BestTime = "10AM to 6PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|53.93,-9.30|53.94,-9.50|53.96,-9.80&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 8
             };
 
             Ride r3 = new Ride()
             {
-                Name = "Forest Gravel Loop",
-                Diff = new List<Difficulty> { Difficulty.Medium, Difficulty.Hard },
-                Type = new List<BikeType> { BikeType.Gravel, BikeType.Mountain },
-                Crowds = new List<Crowds> { Crowds.Average },
-                Weather = new List<Weather> { Weather.Cloudy, Weather.Humid },
-                BestTime = "9AM to 6PM",
-                Map = new Image(),
+                Name = "Lough Gill Loop – Sligo/Leitrim",
+                Diff = new List<Difficulty> { Difficulty.Medium },
+                Type = new List<BikeType> { BikeType.Road },
+                Crowds = new List<Crowds> { Crowds.Few },
+                Weather = new List<Weather> { Weather.Sunny },
+                BestTime = "8AM to 5PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|54.26,-8.43|54.26,-8.37|54.29,-8.34&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
                 Score = 2
             };
 
             Ride r4 = new Ride()
             {
-                Name = "City Sunrise Ride",
+                Name = "Phoenix Park Loop – Dublin",
                 Diff = new List<Difficulty> { Difficulty.Easy },
-                Type = new List<BikeType> { BikeType.Road, BikeType.Electric },
-                Crowds = new List<Crowds> { Crowds.Lot },
-                Weather = new List<Weather> { Weather.Sunny, Weather.Cloudy },
-                BestTime = "5AM to 9AM",
-                Map = new Image(),
-                Score = 3
+                Type = new List<BikeType> { BikeType.Hybrid, BikeType.Road },
+                Crowds = new List<Crowds> { Crowds.Many },
+                Weather = new List<Weather> { Weather.Cloudy, Weather.Sunny },
+                BestTime = "7AM to 9PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|53.355,-6.330|53.357,-6.340|53.360,-6.355&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 1
             };
 
             Ride r5 = new Ride()
             {
-                Name = "Desert Heat Trail",
-                Diff = new List<Difficulty> { Difficulty.Medium, Difficulty.Hard },
-                Type = new List<BikeType> { BikeType.Mountain, BikeType.Gravel },
-                Crowds = new List<Crowds> { Crowds.Nobody },
-                Weather = new List<Weather> { Weather.Hot, Weather.Sunny },
-                BestTime = "6AM to 11AM",
-                Map = new Image(),
-                Score = 4
+                Name = "Howth Cliff & Village Ride",
+                Diff = new List<Difficulty> { Difficulty.Medium },
+                Type = new List<BikeType> { BikeType.Road },
+                Crowds = new List<Crowds> { Crowds.Many },
+                Weather = new List<Weather> { Weather.Sunny, Weather.Windy },
+                BestTime = "8AM to 7PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|53.387,-6.063|53.394,-6.058|53.384,-6.046&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 5
             };
 
             Ride r6 = new Ride()
             {
-                Name = "Foggy Cliffside Route",
-                Diff = new List<Difficulty> { Difficulty.Medium },
-                Type = new List<BikeType> { BikeType.Road, BikeType.Gravel },
-                Crowds = new List<Crowds> { Crowds.Some },
-                Weather = new List<Weather> { Weather.Foggy, Weather.Cloudy },
-                BestTime = "10AM to 5PM",
-                Map = new Image(),
-                Score = 5
+                Name = "Ring of Kerry (Short Killarney Loop)",
+                Diff = new List<Difficulty> { Difficulty.Medium, Difficulty.Hard },
+                Type = new List<BikeType> { BikeType.Road },
+                Crowds = new List<Crowds> { Crowds.Many },
+                Weather = new List<Weather> { Weather.Cloudy },
+                BestTime = "9AM to 6PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|52.06,-9.52|52.03,-9.56|52.01,-9.48&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 6
             };
 
             Ride r7 = new Ride()
             {
-                Name = "Forest Adventure MTB",
-                Diff = new List<Difficulty> { Difficulty.Medium, Difficulty.Hard },
-                Type = new List<BikeType> { BikeType.Mountain },
-                Crowds = new List<Crowds> { Crowds.Some, Crowds.Nobody },
-                Weather = new List<Weather> { Weather.Cloudy, Weather.Rainy },
-                BestTime = "9AM to 4PM",
-                Map = new Image(),
-                Score = 6
+                Name = "Blessington Lakes Loop – Wicklow",
+                Diff = new List<Difficulty> { Difficulty.Medium },
+                Type = new List<BikeType> { BikeType.Road },
+                Crowds = new List<Crowds> { Crowds.Some },
+                Weather = new List<Weather> { Weather.Cloudy, Weather.Sunny },
+                BestTime = "8AM to 7PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|53.17,-6.52|53.15,-6.48|53.18,-6.45&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 4
             };
 
             Ride r8 = new Ride()
             {
-                Name = "Riverside Zen Path",
+                Name = "Waterford Greenway",
                 Diff = new List<Difficulty> { Difficulty.Easy },
-                Type = new List<BikeType> { BikeType.Hybrid, BikeType.Road },
-                Crowds = new List<Crowds> { Crowds.Average },
-                Weather = new List<Weather> { Weather.Sunny, Weather.Cloudy },
-                BestTime = "11AM to 8PM",
-                Map = new Image(),
-                Score = 7
+                Type = new List<BikeType> { BikeType.Hybrid },
+                Crowds = new List<Crowds> { Crowds.Many },
+                Weather = new List<Weather> { Weather.Cloudy, Weather.Windy },
+                BestTime = "9AM to 8PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|52.24,-7.12|52.20,-7.18|52.17,-7.27&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 8
             };
 
             Ride r9 = new Ride()
             {
-                Name = "Urban Night Ride",
-                Diff = new List<Difficulty> { Difficulty.Low, Difficulty.Medium },
-                Type = new List<BikeType> { BikeType.Road, BikeType.Electric },
-                Crowds = new List<Crowds> { Crowds.Lot, Crowds.Impossible },
-                Weather = new List<Weather> { Weather.Cloudy, Weather.Humid },
-                BestTime = "7PM to 11PM",
-                Map = new Image(),
-                Score = 8
+                Name = "Galway to Salthill Coastal Path",
+                Diff = new List<Difficulty> { Difficulty.Easy },
+                Type = new List<BikeType> { BikeType.Hybrid },
+                Crowds = new List<Crowds> { Crowds.Many },
+                Weather = new List<Weather> { Weather.Sunny, Weather.Windy },
+                BestTime = "10AM to 9PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|53.27,-9.06|53.26,-9.08|53.26,-9.12&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 7
             };
 
             Ride r10 = new Ride()
             {
-                Name = "BMX Park Fun Line",
+                Name = "Connemara Loop – Clifden Sky Road",
                 Diff = new List<Difficulty> { Difficulty.Medium, Difficulty.Hard },
-                Type = new List<BikeType> { BikeType.BMX },
-                Crowds = new List<Crowds> { Crowds.Average, Crowds.Lot },
-                Weather = new List<Weather> { Weather.Sunny, Weather.Cold },
-                BestTime = "12PM to 6PM",
-                Map = new Image(),
+                Type = new List<BikeType> { BikeType.Road },
+                Crowds = new List<Crowds> { Crowds.Few },
+                Weather = new List<Weather> { Weather.Sunny },
+                BestTime = "8AM to 5PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|53.49,-10.02|53.50,-10.06|53.51,-10.02&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 6
+            };
+
+            Ride r11 = new Ride()
+            {
+                Name = "Achill Island Coast to Keem Bay",
+                Diff = new List<Difficulty> { Difficulty.Medium },
+                Type = new List<BikeType> { BikeType.Road },
+                Crowds = new List<Crowds> { Crowds.Some },
+                Weather = new List<Weather> { Weather.Windy, Weather.Sunny },
+                BestTime = "9AM to 6PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|53.97,-10.02|53.97,-10.08|53.96,-10.12&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 4
+            };
+
+            Ride r12 = new Ride()
+            {
+                Name = "Cliffs of Moher Coastal Cycle",
+                Diff = new List<Difficulty> { Difficulty.Medium },
+                Type = new List<BikeType> { BikeType.Road },
+                Crowds = new List<Crowds> { Crowds.Many },
+                Weather = new List<Weather> { Weather.Sunny, Weather.Cloudy },
+                BestTime = "9AM to 6PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|52.97,-9.43|52.99,-9.44|52.98,-9.41&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 3
+            };
+
+            Ride r13 = new Ride()
+            {
+                Name = "Dingle Peninsula Slea Head Loop",
+                Diff = new List<Difficulty> { Difficulty.Hard },
+                Type = new List<BikeType> { BikeType.Road },
+                Crowds = new List<Crowds> { Crowds.Some },
+                Weather = new List<Weather> { Weather.Cloudy, Weather.Sunny },
+                BestTime = "8AM to 6PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|52.12,-10.44|52.13,-10.48|52.10,-10.50&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 7
+            };
+
+            Ride r14 = new Ride()
+            {
+                Name = "Boyne Valley Heritage Route",
+                Diff = new List<Difficulty> { Difficulty.Medium },
+                Type = new List<BikeType> { BikeType.Hybrid },
+                Crowds = new List<Crowds> { Crowds.Some },
+                Weather = new List<Weather> { Weather.Cloudy },
+                BestTime = "9AM to 7PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|53.70,-6.45|53.69,-6.40|53.72,-6.36&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 5
+            };
+
+            Ride r15 = new Ride()
+            {
+                Name = "Limerick Greenway",
+                Diff = new List<Difficulty> { Difficulty.Easy },
+                Type = new List<BikeType> { BikeType.Hybrid },
+                Crowds = new List<Crowds> { Crowds.Many },
+                Weather = new List<Weather> { Weather.Cloudy },
+                BestTime = "8AM to 8PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|52.45,-9.06|52.44,-9.13|52.42,-9.19&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 6
+            };
+
+            Ride r16 = new Ride()
+            {
+                Name = "Glenveagh National Park Loop – Donegal",
+                Diff = new List<Difficulty> { Difficulty.Medium },
+                Type = new List<BikeType> { BikeType.Mountain, BikeType.Hybrid },
+                Crowds = new List<Crowds> { Crowds.Few },
+                Weather = new List<Weather> { Weather.Cloudy, Weather.Windy },
+                BestTime = "9AM to 5PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|55.03,-7.99|55.02,-7.95|55.04,-7.93&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
                 Score = 9
+            };
+
+            Ride r17 = new Ride()
+            {
+                Name = "Causeway Coast Ride – Antrim",
+                Diff = new List<Difficulty> { Difficulty.Medium, Difficulty.Hard },
+                Type = new List<BikeType> { BikeType.Road },
+                Crowds = new List<Crowds> { Crowds.Many },
+                Weather = new List<Weather> { Weather.Sunny, Weather.Windy },
+                BestTime = "10AM to 7PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|55.24,-6.51|55.25,-6.55|55.23,-6.57&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 2
+            };
+
+            Ride r18 = new Ride()
+            {
+                Name = "River Shannon Blueway – Leitrim",
+                Diff = new List<Difficulty> { Difficulty.Easy },
+                Type = new List<BikeType> { BikeType.Hybrid, BikeType.Mountain },
+                Crowds = new List<Crowds> { Crowds.Few },
+                Weather = new List<Weather> { Weather.Cloudy },
+                BestTime = "8AM to 7PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|53.99,-8.07|53.98,-8.11|54.00,-8.14&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 1
+            };
+
+            Ride r19 = new Ride()
+            {
+                Name = "Killarney National Park Cycle",
+                Diff = new List<Difficulty> { Difficulty.Easy },
+                Type = new List<BikeType> { BikeType.Hybrid },
+                Crowds = new List<Crowds> { Crowds.Many },
+                Weather = new List<Weather> { Weather.Cloudy, Weather.Sunny },
+                BestTime = "9AM to 6PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|52.04,-9.51|52.05,-9.56|52.02,-9.54&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 0
+            };
+
+            Ride r20 = new Ride()
+            {
+                Name = "Strandhill to Knocknarea Loop – Sligo",
+                Diff = new List<Difficulty> { Difficulty.Medium },
+                Type = new List<BikeType> { BikeType.Road, BikeType.Hybrid },
+                Crowds = new List<Crowds> { Crowds.Some },
+                Weather = new List<Weather> { Weather.Cloudy, Weather.Sunny },
+                BestTime = "8AM to 8PM",
+                Map = "https://maps.googleapis.com/maps/api/staticmap?size=800x600&path=weight:4|color:blue|54.27,-8.59|54.25,-8.54|54.26,-8.51&key=AIzaSyCpIYhDnAimS9vL99Agdi413yk3OvKH3FM",
+                Score = 3
             };
 
             list.Add(r1);
@@ -159,6 +279,17 @@ namespace Project_Bike_Hikes
             list.Add(r8);
             list.Add(r9);
             list.Add(r10);
+            list.Add(r11);
+            list.Add(r12);
+            list.Add(r13);
+            list.Add(r14);
+            list.Add(r15);
+            list.Add(r16);
+            list.Add(r17);
+            list.Add(r18);
+            list.Add(r19);
+            list.Add(r20);
+
 
             return list;
 
