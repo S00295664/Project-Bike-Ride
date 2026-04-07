@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Windows.Controls;
 
 namespace Project_Bike_Hikes
 {
@@ -46,10 +45,19 @@ namespace Project_Bike_Hikes
         Humid
     }
 
+    public enum Country { 
+        France,
+        Ireland,
+        Germany,
+        Italy,
+        Spain
+    }
+
     public class Ride
     {
 
         public string Name;
+        public Country Country;
         public List<Difficulty> Diff;
         public List<BikeType> Type;
         public List<Crowds> Crowds;
@@ -58,14 +66,13 @@ namespace Project_Bike_Hikes
         public string Map;
         public int Score;
 
-        public Ride()
-        {
-        }
-
-        public Ride(string name, List<Difficulty> diff, List<BikeType> types, List<Crowds> crowds, List<Weather> weather, string bestTime, string map, int score)
+        public Ride() { }
+        
+        public Ride(string name, List<Difficulty> diff,Country country, List<BikeType> types, List<Crowds> crowds, List<Weather> weather, string bestTime, string map, int score)
         {
 
             Name = name;
+            Country = country;
             Diff = diff;
             Type = types;
             Crowds = crowds;
@@ -73,7 +80,6 @@ namespace Project_Bike_Hikes
             BestTime = bestTime;
             Map = map;
             Score = score;
-
         }
     }
 }

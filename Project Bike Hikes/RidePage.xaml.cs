@@ -14,13 +14,9 @@ namespace Project_Bike_Hikes
         public RidePage(Ride ride)
         {
             actual = ride;
-
-            
             InitializeComponent();
             
         }
-
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -48,7 +44,6 @@ namespace Project_Bike_Hikes
                 Console.WriteLine("No map link provided");
                 return;
             }
-
             MapPreview.Source = new BitmapImage(new Uri(actual.Map));
         }
     }
