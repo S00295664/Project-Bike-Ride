@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data.cs" />
     <Compile Include="Ride.cs" />
     <Compile Include="RidePage.xaml.cs">
       <DependentUpon>RidePage.xaml</DependentUpon>
@@ -109,13 +110,11 @@
     <Resource Include="Ressource\5840199.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressource\18086706-.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="638055.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Ressource\bike icon.png" />
+    <Resource Include="Ressource\home.png" />
     <Content Include="Ressource\VideoBike3.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

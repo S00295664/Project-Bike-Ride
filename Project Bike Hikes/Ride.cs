@@ -65,10 +65,12 @@ namespace Project_Bike_Hikes
         public string BestTime;
         public string Map;
         public int Score;
+        public List<string> City;
+        public int Size;
 
         public Ride() { }
         
-        public Ride(string name, List<Difficulty> diff,Country country, List<BikeType> types, List<Crowds> crowds, List<Weather> weather, string bestTime, string map, int score)
+        public Ride(string name, List<Difficulty> diff,Country country, List<BikeType> types, List<Crowds> crowds, List<Weather> weather, string bestTime, string map, int score, List<string> city, int size)
         {
 
             Name = name;
@@ -80,6 +82,8 @@ namespace Project_Bike_Hikes
             BestTime = bestTime;
             Map = map;
             Score = score;
+            City = city;
+            Size = size;
         }
     }
 }
