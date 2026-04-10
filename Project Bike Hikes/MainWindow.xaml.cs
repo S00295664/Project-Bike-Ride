@@ -130,6 +130,7 @@ namespace Project_Bike_Hikes
             if (LangBox.SelectedItem is Country country)
                 trending = trending.Where(r => r.Country.Equals(country)).Where(r => r.Score > 5).ToList();
 
+            LangText.Text = null;
             Trending.ItemsSource = trending.Select(r => r.Name).ToList();
 
 

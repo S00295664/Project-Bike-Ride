@@ -24,6 +24,8 @@
                       MediaEnded="BackgroundVideo_MediaEnded" Margin="0,0,-225,-176"/>
 
             <ComboBox x:Name="LangBox" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="104" SelectionChanged="LangBox_SelectionChanged"/>
+            <TextBlock x:Name="LangText" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" FontSize="20" FontFamily="Sitka Banner" Foreground="Black" RenderTransformOrigin="0.483,0.706" Margin="21,10,0,0"><Run Text="Country : "/></TextBlock>
+
 
             <Grid HorizontalAlignment="Center" Height="175" VerticalAlignment="Top" Width="676" RenderTransformOrigin="0.497,0.469">
                 <TextBlock x:Name="MainTitle" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" FontSize="60" FontFamily="Sitka Banner" Foreground="White" RenderTransformOrigin="0.483,0.706" Margin="202,-4,0,0"><Run Text="BIKE "/><Run Language="en-gb" Text="R"/><Run Text="I"/><Run Language="en-gb" Text="D"/><Run Text="E"/></TextBlock>
