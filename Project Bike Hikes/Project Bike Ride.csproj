@@ -115,6 +115,8 @@
   <ItemGroup>
     <Resource Include="Ressource\bike icon.png" />
     <Resource Include="Ressource\home.png" />
+    <Resource Include="Ressource\down.png" />
+    <Resource Include="Ressource\heart.png" />
     <Content Include="Ressource\VideoBike3.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

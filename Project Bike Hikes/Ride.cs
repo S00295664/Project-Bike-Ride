@@ -67,6 +67,7 @@ namespace Project_Bike_Hikes
         public int Score;
         public List<string> City;
         public int Size;
+        
 
         public Ride() { }
         

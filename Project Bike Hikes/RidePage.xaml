@@ -14,12 +14,12 @@
 
     <Grid>
 
-        <Image Source="/Ressource/5840199.jpg" Stretch="UniformToFill" Panel.ZIndex="0"/>
+        <Image Source="/Ressource/5840199.jpg" Stretch="UniformToFill" Panel.ZIndex="0" />
 
 
         <Viewbox Stretch="Uniform" Panel.ZIndex="1"
          HorizontalAlignment="Left"
-         VerticalAlignment="Top">
+         VerticalAlignment="Center">
             <Grid Width="1630" Height="933">
                 <Button HorizontalAlignment="Left" Height="124" Margin="10,10,0,0" VerticalAlignment="Top" Width="164"
                         Background="#00DDDDDD" Foreground="White" FontSize="18" Click="Button_Click" BorderBrush="#00707070">
@@ -27,21 +27,53 @@
                         <Image Source="/Ressource/home.png" Width="155" Height="92"/>
                     </StackPanel>
                 </Button>
-
-                <TextBox x:Name="RideName" HorizontalAlignment="Center" Height="191" IsHitTestVisible="False"
-                         Margin="0,38,0,0" TextWrapping="Wrap" IsReadOnly="True" Text="TextBox"
-                         VerticalAlignment="Top" Width="614" TextChanged="TextBox_TextChanged"
-                         Background="Transparent" FontSize="72" Foreground="White"
+                <Image Source="/Ressource/down.png"  Margin="344,457,1108,273" RenderTransformOrigin="0.5,0.5" >
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-89.612"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <TextBox x:Name="RideName" HorizontalAlignment="Left" Height="96" IsHitTestVisible="False"
+                         Margin="414,38,0,0" TextWrapping="Wrap" IsReadOnly="True" Text="TextBox"
+                         VerticalAlignment="Top" Width="902" TextChanged="TextBox_TextChanged"
+                         Background="#330A0A0A" FontSize="72" Foreground="White"
                          BorderBrush="#00ABADB3" FontFamily="Sitka Banner" TextAlignment="Center"/>
 
-                <TextBox x:Name="BikeType" HorizontalAlignment="Left" Height="98" IsHitTestVisible="False"
-                         Margin="39,297,0,0" TextWrapping="Wrap" Text="TextBox" IsReadOnly="True"
+                <TextBox x:Name="BikeType" HorizontalAlignment="Left" Height="59" IsHitTestVisible="False"
+                         Margin="128,623,0,0" TextWrapping="Wrap" Text="BikeType" IsReadOnly="True"
                          VerticalAlignment="Top" Width="661" Background="Transparent"
                          FontFamily="Sitka Banner" FontSize="36" Foreground="#FFF9F9F9"
                          TextChanged="BIKE_TextChanged" BorderBrush="#00ABADB3"/>
+                <TextBox x:Name="Description" HorizontalAlignment="Left" Height="189" IsHitTestVisible="False"
+                         Margin="128,247,0,0" TextWrapping="Wrap" Text="Description" IsReadOnly="True"
+                         VerticalAlignment="Top" Width="1108" Background="Transparent"
+                         FontFamily="Sitka Banner" FontSize="24" Foreground="#FFF9F9F9"
+                         TextChanged="BIKE_TextChanged" BorderBrush="#00ABADB3" Initialized="Description_Initialized"/>
+                <TextBox x:Name="City1" HorizontalAlignment="Left" Height="60" IsHitTestVisible="False"
+                        Margin="128,536,0,0" TextWrapping="Wrap" Text="TextBox" IsReadOnly="True"
+                        VerticalAlignment="Top" Width="259" Background="#00000000"
+                        FontFamily="Sitka Banner" FontSize="36" Foreground="#FFF9F9F9"
+                        TextChanged="BIKE_TextChanged" BorderBrush="#00ABADB3" Initialized="City_Initialized1"/>
+                <TextBox x:Name="Score"  Height="121" IsHitTestVisible="False"
+                        Margin="1321,247,0,565" TextWrapping="Wrap" Text="Score" IsReadOnly="True"
+                         Width="309" Background="#00000000"
+                        FontFamily="Sitka Banner" FontSize="36" Foreground="#FFF9F9F9"
+                        TextChanged="BIKE_TextChanged" BorderBrush="#00ABADB3" Initialized="Score_Init"/>
+                <TextBox x:Name="City2" HorizontalAlignment="Left" Height="60" IsHitTestVisible="False"
+                        Margin="611,536,0,0" TextWrapping="Wrap" Text="TextBox" IsReadOnly="True"
+                        VerticalAlignment="Top" Width="299" Background="#00000000"
+                        FontFamily="Sitka Banner" FontSize="36" Foreground="#FFF9F9F9"
+                        TextChanged="BIKE_TextChanged" BorderBrush="#00ABADB3" Initialized="City_Initialized2"/>
+                <TextBox x:Name="Weather" HorizontalAlignment="Left" Height="61" IsHitTestVisible="False"
+                        Margin="128,682,0,0" TextWrapping="Wrap" Text="Average Weather :" IsReadOnly="True"
+                        VerticalAlignment="Top" Width="600" Background="Transparent"
+                        FontFamily="Sitka Banner" FontSize="36" Foreground="#FFF9F9F9"
+                        TextChanged="BIKE_TextChanged" BorderBrush="#00ABADB3" Initialized="Weather_Initialized"/>
 
-                <Image x:Name="MapPreview" Stretch="Uniform" Margin="1238,554,77,68"
-                       Initialized="MapPreview_Initialized"/>
             </Grid>
         </Viewbox>
     </Grid>

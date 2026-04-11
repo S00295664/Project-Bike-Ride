@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Imaging;
+using System.Linq;
 
 namespace Project_Bike_Hikes
 {
@@ -37,14 +37,43 @@ namespace Project_Bike_Hikes
             BikeType.Text = "Type of Bike Recommanded : " + type;
         }
 
-        private void MapPreview_Initialized(object sender, EventArgs e)
+        private void City_Initialized1(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(actual.Map))
-            {
-                Console.WriteLine("No map link provided");
-                return;
-            }
-            MapPreview.Source = new BitmapImage(new Uri(actual.Map));
+            City1.Text = $"{actual.City[0]}";
+        }
+
+        private void City_Initialized2(object sender, EventArgs e)
+        {
+            City2.Text = $"{actual.City[1]}     ({actual.Size}km)   ";
+        }
+
+        private void Weather_Initialized(object sender, EventArgs e)
+        {
+            string type = "";
+            foreach (var item in actual.Weather) type += item.ToString() + " / ";
+            Weather.Text = "Weather Recommanded : " + type;
+        }
+
+        private void Description_Initialized(object sender, EventArgs e)
+        {
+            string diff = actual.Diff.First().ToString();
+            for (int i = 1; i < actual.Diff.Count - 1; i++) diff += " and " + actual.Diff.ElementAt(i).ToString();
+            string bike = actual.Type.First().ToString();
+            for (int i = 1; i < actual.Type.Count - 1; i++) bike += " and " + actual.Type.ElementAt(i).ToString();
+            string weather = actual.Weather.First().ToString();
+            for (int i = 1; i < actual.Weather.Count - 1; i++) bike += " and " + actual.Weather.ElementAt(i).ToString();
+
+            Description.Text = $"The ride of {actual.Name} is a beautiful ride cross the {actual.Country}." +
+                $"\nThe Type of bike recommended for this ride is {bike} and this ride difficulty is considered {diff}. " +
+                $"\nGenerally, the type of weather is {weather}, but that can change, so dont forget to check before." +
+                $"\nThe ride start at the city of {actual.City[0]} and end at {actual.City[1]} : its a {actual.Size}km ({actual.Size* 0.6}miles)"
+                ;
+        }
+
+        private void Score_Init(object sender, EventArgs e)
+        {
+            Score.Text = $"Other people not this ride : " +
+                $"         {actual.Score}/10";
         }
     }
 }

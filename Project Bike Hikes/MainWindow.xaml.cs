@@ -11,7 +11,11 @@ namespace Project_Bike_Hikes
     {
 
         List<Ride> list;
+        List<Ride> His;
+
         
+        
+
 
         public MainWindow()
         {
@@ -22,6 +26,8 @@ namespace Project_Bike_Hikes
             DiffBox_Copy1.ItemsSource = Enum.GetValues(typeof(Weather));
             DiffBox_Copy3.ItemsSource = Enum.GetValues(typeof(Crowds));
             LangBox.ItemsSource = Enum.GetValues(typeof(Country));
+
+            
         }
 
         
@@ -36,6 +42,7 @@ namespace Project_Bike_Hikes
 
             list = new List<Ride>();
             list = Data.load_ride(list);
+            His = Data.history;
             DiffBox.SelectionChanged += FilterRides;
             DiffBox_Copy.SelectionChanged += FilterRides;
             DiffBox_Copy1.SelectionChanged += FilterRides;
@@ -43,7 +50,10 @@ namespace Project_Bike_Hikes
             LangBox.SelectionChanged += FilterRides;
 
             var trending = list.AsEnumerable();
-            Trending.ItemsSource = trending.Where(r => r.Score > 5).Select(r => r.Name).ToList();
+            Trending.ItemsSource = trending.Where(r => r.Score > 9).Select(r => r.Name).ToList();
+
+            if (His == null) His = new List<Ride>();
+            if (His.Count != 0)  History.ItemsSource = His.Select(r => r.Name).ToList();
         }
 
         private void FilterRides(object sender, SelectionChangedEventArgs e)
@@ -102,6 +112,8 @@ namespace Project_Bike_Hikes
                 if (BestMatchListBox.SelectedItem == ride.Name)
                 {
                     var page = new RidePage(ride);
+                    His.Add(ride);
+                    Data.history = His;
                     page.Show();
                     this.Close();
                 }
@@ -117,6 +129,8 @@ namespace Project_Bike_Hikes
                 {
                     
                     var page = new RidePage(ride);
+                    His.Add(ride);
+                    Data.history = His;
                     page.Show();
                     this.Close();
                 }
@@ -128,10 +142,10 @@ namespace Project_Bike_Hikes
 
             var trending = list.AsEnumerable();
             if (LangBox.SelectedItem is Country country)
-                trending = trending.Where(r => r.Country.Equals(country)).Where(r => r.Score > 5).ToList();
+                trending = trending.Where(r => r.Country.Equals(country)).Where(r => r.Score > 9).ToList();
 
             LangText.Text = null;
-            Trending.ItemsSource = trending.Select(r => r.Name).ToList();
+            Trending.ItemsSource = trending.OrderBy(r => r.Diff.Min()).Select(r => r.Name).ToList();
 
 
         }

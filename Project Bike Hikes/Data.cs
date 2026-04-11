@@ -6,6 +6,7 @@ namespace Project_Bike_Hikes
     public class Data
     {
 
+        public static List<Ride> history = new List<Ride>();
         public static List<Ride> load_ride(List<Ride> list)
         {
 
@@ -364,12 +365,12 @@ namespace Project_Bike_Hikes
 
     new Ride("Leipzig Lakes", new List<Difficulty>{Difficulty.Easy}, Country.Germany,
         new List<BikeType>{BikeType.Hybrid}, new List<Crowds>{Crowds.Some},
-        new List<Weather>{Weather.Cloudy}, "Summer", "", 7,
+        new List<Weather>{Weather.Cloudy}, "Summer", "", 6,
         new List<string>{"Leipzig", "Markkleeberg"}, 25),
 
     new Ride("Nuremberg to Bamberg", new List<Difficulty>{Difficulty.Low}, Country.Germany,
         new List<BikeType>{BikeType.Road}, new List<Crowds>{Crowds.Some},
-        new List<Weather>{Weather.Cloudy}, "Spring", "", 8,
+        new List<Weather>{Weather.Cloudy}, "Spring", "", 7,
         new List<string>{"Nuremberg", "Bamberg"}, 60),
 
     new Ride("Hanover Green Ride", new List<Difficulty>{Difficulty.Easy}, Country.Germany,
