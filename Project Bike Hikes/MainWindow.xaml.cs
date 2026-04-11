@@ -149,6 +149,13 @@ namespace Project_Bike_Hikes
 
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var profil = new Profil();
+            profil.Show();
+            this.Close();
+        }
     }
 
 }

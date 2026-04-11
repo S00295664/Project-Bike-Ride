@@ -7,6 +7,7 @@ namespace Project_Bike_Hikes
     {
 
         public static List<Ride> history = new List<Ride>();
+        public static List<Ride> favorit = new List<Ride>();
         public static List<Ride> load_ride(List<Ride> list)
         {
 

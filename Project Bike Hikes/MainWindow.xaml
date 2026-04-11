@@ -14,6 +14,7 @@
 >
     <Viewbox>
         <Grid>
+
             <MediaElement Name="BackgroundVideo"
                       Source="Ressource/VideoBike3.mp4"
                       LoadedBehavior="Manual"
@@ -23,8 +24,14 @@
                       IsMuted="True"
                       MediaEnded="BackgroundVideo_MediaEnded" Margin="0,0,-225,-176"/>
 
-            <ComboBox x:Name="LangBox" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="104" SelectionChanged="LangBox_SelectionChanged"/>
-            <TextBlock x:Name="LangText" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" FontSize="20" FontFamily="Sitka Banner" Foreground="Black" RenderTransformOrigin="0.483,0.706" Margin="21,10,0,0"><Run Text="Country : "/></TextBlock>
+            <ComboBox x:Name="LangBox" HorizontalAlignment="Left" Height="25" Margin="10,11,0,0" VerticalAlignment="Top" Width="104" SelectionChanged="LangBox_SelectionChanged"/>
+            <Button HorizontalAlignment="Left" Height="82" Margin="10,34,0,0" VerticalAlignment="Top" Width="104"
+                    Background="#00DDDDDD" Foreground="White" FontSize="18" Click="Button_Click" BorderBrush="#00707070">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                    <Image Source="/Ressource/helmet.png" Width="97" Height="69"/>
+                </StackPanel>
+            </Button>
+            <TextBlock x:Name="LangText" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" FontSize="18" FontFamily="Sitka Banner" Foreground="Black" RenderTransformOrigin="0.483,0.706" Margin="17,11,0,0"><Run Text="Country : "/></TextBlock>
 
 
             <Grid HorizontalAlignment="Center" Height="175" VerticalAlignment="Top" Width="676" RenderTransformOrigin="0.497,0.469">

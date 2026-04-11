@@ -59,6 +59,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Data.cs" />
+    <Compile Include="Profil.xaml.cs">
+      <DependentUpon>Profil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ride.cs" />
     <Compile Include="RidePage.xaml.cs">
       <DependentUpon>RidePage.xaml</DependentUpon>
@@ -75,6 +78,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Profil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RidePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,6 +124,8 @@
     <Resource Include="Ressource\home.png" />
     <Resource Include="Ressource\down.png" />
     <Resource Include="Ressource\heart.png" />
+    <Resource Include="Ressource\cyclist1.jpg" />
+    <Resource Include="Ressource\helmet.png" />
     <Content Include="Ressource\VideoBike3.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -14,7 +14,8 @@
 
     <Grid>
 
-        <Image Source="/Ressource/5840199.jpg" Stretch="UniformToFill" Panel.ZIndex="0" />
+
+        <Image Source="/Ressource/cyclist1.jpg" Stretch="UniformToFill" Panel.ZIndex="0" />
 
 
         <Viewbox Stretch="Uniform" Panel.ZIndex="1"
@@ -58,14 +59,17 @@
                         VerticalAlignment="Top" Width="259" Background="#00000000"
                         FontFamily="Sitka Banner" FontSize="36" Foreground="#FFF9F9F9"
                         TextChanged="BIKE_TextChanged" BorderBrush="#00ABADB3" Initialized="City_Initialized1"/>
-                <TextBox x:Name="Score"  Height="121" IsHitTestVisible="False"
-                        Margin="1321,247,0,565" TextWrapping="Wrap" Text="Score" IsReadOnly="True"
-                         Width="309" Background="#00000000"
+                <TextBox x:Name="Score" IsHitTestVisible="False"
+                        Margin="134,838,1202,41" TextWrapping="Wrap" Text="Score" IsReadOnly="True" Background="#00000000"
                         FontFamily="Sitka Banner" FontSize="36" Foreground="#FFF9F9F9"
                         TextChanged="BIKE_TextChanged" BorderBrush="#00ABADB3" Initialized="Score_Init"/>
+                <ProgressBar x:Name="ScoreBar" Minimum="0" Maximum="10"  Margin="391,848,291,51" Initialized="ScoreBar_Initialized_1" />
+
+
+
                 <TextBox x:Name="City2" HorizontalAlignment="Left" Height="60" IsHitTestVisible="False"
                         Margin="611,536,0,0" TextWrapping="Wrap" Text="TextBox" IsReadOnly="True"
-                        VerticalAlignment="Top" Width="299" Background="#00000000"
+                        VerticalAlignment="Top" Width="414" Background="#00000000"
                         FontFamily="Sitka Banner" FontSize="36" Foreground="#FFF9F9F9"
                         TextChanged="BIKE_TextChanged" BorderBrush="#00ABADB3" Initialized="City_Initialized2"/>
                 <TextBox x:Name="Weather" HorizontalAlignment="Left" Height="61" IsHitTestVisible="False"
@@ -73,6 +77,11 @@
                         VerticalAlignment="Top" Width="600" Background="Transparent"
                         FontFamily="Sitka Banner" FontSize="36" Foreground="#FFF9F9F9"
                         TextChanged="BIKE_TextChanged" BorderBrush="#00ABADB3" Initialized="Weather_Initialized"/>
+                <TextBox x:Name="tESnO" HorizontalAlignment="Left" Height="61" IsHitTestVisible="False"
+            Margin="611,848,0,0" TextWrapping="Wrap" Text="No                                                                                Yes" IsReadOnly="True"
+            VerticalAlignment="Top" Width="600" Background="Transparent"
+            FontFamily="Sitka Banner" FontSize="24" Foreground="Black"
+            TextChanged="BIKE_TextChanged" BorderBrush="#00ABADB3" Initialized="Weather_Initialized"/>
 
             </Grid>
         </Viewbox>

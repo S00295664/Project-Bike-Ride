@@ -66,14 +66,19 @@ namespace Project_Bike_Hikes
             Description.Text = $"The ride of {actual.Name} is a beautiful ride cross the {actual.Country}." +
                 $"\nThe Type of bike recommended for this ride is {bike} and this ride difficulty is considered {diff}. " +
                 $"\nGenerally, the type of weather is {weather}, but that can change, so dont forget to check before." +
-                $"\nThe ride start at the city of {actual.City[0]} and end at {actual.City[1]} : its a {actual.Size}km ({actual.Size* 0.6}miles)"
+                $"\nThe ride start at the city of {actual.City[0]} and end at {actual.City[1]} : its a {actual.Size}km ({actual.Size* 0.6}miles) ride"
                 ;
         }
 
         private void Score_Init(object sender, EventArgs e)
         {
-            Score.Text = $"Other people not this ride : " +
-                $"         {actual.Score}/10";
+            Score.Text = $"Recommanded :    {actual.Score}/10";
+        }
+
+
+        private void ScoreBar_Initialized_1(object sender, EventArgs e)
+        {
+            ScoreBar.Value = actual.Score;
         }
     }
 }
