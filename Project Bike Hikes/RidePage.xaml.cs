@@ -83,9 +83,30 @@ namespace Project_Bike_Hikes
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            if (!Data.favorit.Any(r => r.Name == actual.Name)) Data.favorit.Add(actual);
-            else Data.favorit.Remove(actual);
+            var existing = Data.favorit.FirstOrDefault(r => r.Name == actual.Name);
 
+            if (existing == null)
+            {
+                Data.favorit.Add(actual);  
+            }
+            else
+            {
+                Data.favorit.Remove(existing);
+            }
+        }
+
+        private void IsSave_Change(object sender, TextChangedEventArgs e)
+        {
+            var existing = Data.favorit.FirstOrDefault(r => r.Name == actual.Name);
+
+            if (existing == null)
+            {
+                IsSave.Text = "Add from favorits";
+            }
+            else
+            {
+                IsSave.Text = "Remove from favorits";
+            }
         }
     }
 }

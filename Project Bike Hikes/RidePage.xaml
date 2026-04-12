@@ -28,10 +28,10 @@
                         <Image Source="/Ressource/home.png" Width="155" Height="92"/>
                     </StackPanel>
                 </Button>
-                <Button HorizontalAlignment="Left" Height="124" Margin="1456,10,0,0" VerticalAlignment="Top" Width="164"
+                <Button HorizontalAlignment="Left" Height="162" Margin="1456,10,0,0" VerticalAlignment="Top" Width="174"
                         Background="#00DDDDDD" Foreground="White" FontSize="18" Click="Save_Click" BorderBrush="#00707070">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                        <Image Source="/Ressource/save.png" Width="146" Height="130"/>
+                        <Image Source="/Ressource/save.png" Width="176" Height="148"/>
                     </StackPanel>
                 </Button>
                 <Image Source="/Ressource/down.png"  Margin="344,457,1108,273" RenderTransformOrigin="0.5,0.5" >
@@ -48,6 +48,11 @@
                          Margin="414,38,0,0" TextWrapping="Wrap" IsReadOnly="True" Text="TextBox"
                          VerticalAlignment="Top" Width="902" TextChanged="TextBox_TextChanged"
                          Background="#330A0A0A" FontSize="72" Foreground="White"
+                         BorderBrush="#00ABADB3" FontFamily="Sitka Banner" TextAlignment="Center"/>
+                <TextBox x:Name="IsSave" HorizontalAlignment="Left" Height="77" IsHitTestVisible="False"
+                         Margin="1448,140,0,0" TextWrapping="Wrap" IsReadOnly="True" Text="Isave"
+                         VerticalAlignment="Top" Width="176" TextChanged="IsSave_Change"
+                         Background="#000A0A0A" FontSize="24" Foreground="White"
                          BorderBrush="#00ABADB3" FontFamily="Sitka Banner" TextAlignment="Center"/>
 
                 <TextBox x:Name="BikeType" HorizontalAlignment="Left" Height="59" IsHitTestVisible="False"
