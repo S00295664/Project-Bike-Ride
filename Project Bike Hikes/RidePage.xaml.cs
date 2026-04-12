@@ -80,5 +80,12 @@ namespace Project_Bike_Hikes
         {
             ScoreBar.Value = actual.Score;
         }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Data.favorit.Any(r => r.Name == actual.Name)) Data.favorit.Add(actual);
+            else Data.favorit.Remove(actual);
+
+        }
     }
 }

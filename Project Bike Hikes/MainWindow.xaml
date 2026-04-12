@@ -61,7 +61,7 @@
                     </TextBlock.RenderTransform><Run Text="Best Match"/><Run Language="en-gb" Text=" "/><Run Text="Found :"/></TextBlock>
 
                 <ListBox x:Name="BestMatchListBox" HorizontalAlignment="Left" Height="201" Margin="12,64,0,0" VerticalAlignment="Top" Width="389" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#33808080" Foreground="White" SelectionChanged="BestMatchListBox_SelectionChanged"    />
-                <ListBox x:Name="History" HorizontalAlignment="Left" Height="81" Margin="12,293,0,0" VerticalAlignment="Top" Width="389" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#33808080" Foreground="White" SelectionChanged="BestMatchListBox_SelectionChanged"    />
+                <ListBox x:Name="History" HorizontalAlignment="Left" Height="81" Margin="12,293,0,0" VerticalAlignment="Top" Width="389" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#33808080" Foreground="White" SelectionChanged="his_SelectionChanged"    />
                 <TextBlock HorizontalAlignment="Left" Margin="12,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontStyle="Italic" FontFamily="Sitka Banner" Width="137" Foreground="White" Background="#66484848"><Run Text="History"/><Run Language="en-gb" Text=" :"/></TextBlock>
                 <TextBlock HorizontalAlignment="Left" Margin="441,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontStyle="Italic" FontFamily="Sitka Banner" Width="206" Foreground="White" Background="#66B05454"><Run Text="Want to see your favorite ?            Check your profil       (top left)"/></TextBlock>
                 <Image Source="/Ressource/heart.png" Margin="619,303,27,69" RenderTransformOrigin="0.5,0.5">

@@ -11,11 +11,6 @@ namespace Project_Bike_Hikes
     {
 
         List<Ride> list;
-        List<Ride> His;
-
-        
-        
-
 
         public MainWindow()
         {
@@ -26,11 +21,7 @@ namespace Project_Bike_Hikes
             DiffBox_Copy1.ItemsSource = Enum.GetValues(typeof(Weather));
             DiffBox_Copy3.ItemsSource = Enum.GetValues(typeof(Crowds));
             LangBox.ItemsSource = Enum.GetValues(typeof(Country));
-
-            
         }
-
-        
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
@@ -42,7 +33,6 @@ namespace Project_Bike_Hikes
 
             list = new List<Ride>();
             list = Data.load_ride(list);
-            His = Data.history;
             DiffBox.SelectionChanged += FilterRides;
             DiffBox_Copy.SelectionChanged += FilterRides;
             DiffBox_Copy1.SelectionChanged += FilterRides;
@@ -52,8 +42,7 @@ namespace Project_Bike_Hikes
             var trending = list.AsEnumerable();
             Trending.ItemsSource = trending.Where(r => r.Score > 9).Select(r => r.Name).ToList();
 
-            if (His == null) His = new List<Ride>();
-            if (His.Count != 0)  History.ItemsSource = His.Select(r => r.Name).ToList();
+            History.ItemsSource = Data.history.Select(r => r.Name).ToList();
         }
 
         private void FilterRides(object sender, SelectionChangedEventArgs e)
@@ -75,7 +64,6 @@ namespace Project_Bike_Hikes
             BestMatchListBox.ItemsSource = filtered.Select(r => r.Name).ToList();
 
             var remaining = filtered.ToList();
-
             var diffValues = remaining.SelectMany(r => r.Diff).Distinct().ToList();
             if (DiffBox.SelectedItem == null)
                 DiffBox.ItemsSource = diffValues;
@@ -112,8 +100,7 @@ namespace Project_Bike_Hikes
                 if (BestMatchListBox.SelectedItem == ride.Name)
                 {
                     var page = new RidePage(ride);
-                    His.Add(ride);
-                    Data.history = His;
+                    if (!Data.history.Any(r => r.Name == ride.Name)) Data.history.Add(ride);
                     page.Show();
                     this.Close();
                 }
@@ -129,8 +116,7 @@ namespace Project_Bike_Hikes
                 {
                     
                     var page = new RidePage(ride);
-                    His.Add(ride);
-                    Data.history = His;
+                    if (!Data.history.Any(r => r.Name == ride.Name)) Data.history.Add(ride);
                     page.Show();
                     this.Close();
                 }
@@ -146,8 +132,6 @@ namespace Project_Bike_Hikes
 
             LangText.Text = null;
             Trending.ItemsSource = trending.OrderBy(r => r.Diff.Min()).Select(r => r.Name).ToList();
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -155,6 +139,21 @@ namespace Project_Bike_Hikes
             var profil = new Profil();
             profil.Show();
             this.Close();
+        }
+
+        private void his_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (Ride ride in list)
+            {
+                if (History.SelectedItem == ride.Name)
+                {
+
+                    var page = new RidePage(ride);
+                    if (!Data.history.Any(r => r.Name == ride.Name)) Data.history.Add(ride);
+                    page.Show();
+                    this.Close();
+                }
+            }
         }
     }
 

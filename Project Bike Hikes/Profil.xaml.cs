@@ -1,29 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Project_Bike_Hikes
 {
-    /// <summary>
-    /// Logique d'interaction pour Profil.xaml
-    /// </summary>
     public partial class Profil : Window
     {
-        List<Ride> His;
+
+        List<Ride> list;
+
         public Profil()
         {
             InitializeComponent();
-            His = Data.history;
+            list = Data.load_ride(list);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            History.ItemsSource = Data.history.Select(r => r.Name).ToList();
+            Favorits.ItemsSource = Data.favorit.Select(r => r.Name).ToList();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,19 +33,32 @@ namespace Project_Bike_Hikes
 
         private void Fav_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            foreach (Ride ride in list)
+            {
+                if (Favorits.SelectedItem == ride.Name)
+                {
 
+                    var page = new RidePage(ride);
+                    if (!Data.history.Any(r => r.Name == ride.Name)) Data.history.Add(ride);
+                    page.Show();
+                    this.Close();
+                }
+            }
         }
 
         private void History_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            foreach (Ride ride in list)
+            {
+                if (History.SelectedItem == ride.Name)
+                {
 
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (His == null) His = new List<Ride>();
-            if (His.Count != 0) History.ItemsSource = His.Select(r => r.Name).ToList();
-
+                    var page = new RidePage(ride);
+                    if (!Data.history.Any(r => r.Name == ride.Name)) Data.history.Add(ride);
+                    page.Show();
+                    this.Close();
+                }
+            }
         }
     }
 }
