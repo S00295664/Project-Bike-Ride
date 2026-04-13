@@ -30,13 +30,6 @@ namespace Project_Bike_Hikes
             RideName.Text = actual.Name;
         }
 
-        private void BIKE_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string type = "";
-            foreach (var item in actual.Type) type += item.ToString() + " / ";
-            BikeType.Text = "Type of Bike Recommanded : " + type;
-        }
-
         private void City_Initialized1(object sender, EventArgs e)
         {
             City1.Text = $"{actual.City[0]}";
@@ -45,13 +38,6 @@ namespace Project_Bike_Hikes
         private void City_Initialized2(object sender, EventArgs e)
         {
             City2.Text = $"{actual.City[1]}     ({actual.Size}km)   ";
-        }
-
-        private void Weather_Initialized(object sender, EventArgs e)
-        {
-            string type = "";
-            foreach (var item in actual.Weather) type += item.ToString() + " / ";
-            Weather.Text = "Weather Recommanded : " + type;
         }
 
         private void Description_Initialized(object sender, EventArgs e)
@@ -101,12 +87,17 @@ namespace Project_Bike_Hikes
 
             if (existing == null)
             {
-                IsSave.Text = "Add from favorits";
+                IsSave.Text = "Add to favorites";
             }
             else
             {
-                IsSave.Text = "Remove from favorits";
+                IsSave.Text = "Remove to favorites";
             }
+        }
+
+        private void YesNo_Initialized(object sender, EventArgs e)
+        {
+            tESnO.Text = "Yes \n\n\n\n\n\n\n\n\n\n\n\nNo ";
         }
     }
 }

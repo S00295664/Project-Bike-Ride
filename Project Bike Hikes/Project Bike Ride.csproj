@@ -124,9 +124,9 @@
     <Resource Include="Ressource\home.png" />
     <Resource Include="Ressource\down.png" />
     <Resource Include="Ressource\heart.png" />
-    <Resource Include="Ressource\cyclist1.jpg" />
     <Resource Include="Ressource\helmet.png" />
     <Resource Include="Ressource\save.png" />
+    <Resource Include="Ressource\gen.png" />
     <Content Include="Ressource\VideoBike3.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -15,15 +15,15 @@
     <Grid>
 
 
-        <Image Source="/Ressource/cyclist1.jpg" Stretch="UniformToFill" Panel.ZIndex="0" />
+        <Image Source="/Ressource/gen.png" Stretch="UniformToFill" Panel.ZIndex="0" />
 
 
         <Viewbox Stretch="Uniform" Panel.ZIndex="1" HorizontalAlignment="Center"
          VerticalAlignment="Center">
             <Grid Width="1630" Height="933">
-                <TextBox x:Name="title" HorizontalAlignment="Center" Height="129" IsHitTestVisible="False"
-                         Margin="0,40,0,0" TextWrapping="Wrap" Text="YOUR PROFIL" IsReadOnly="True"
-                         VerticalAlignment="Top" Width="586" Background="Transparent"
+                <TextBox x:Name="title" HorizontalAlignment="Left" Height="129" IsHitTestVisible="False"
+                         Margin="542,41,0,0" TextWrapping="Wrap" Text="YOUR PROFIL" IsReadOnly="True"
+                         VerticalAlignment="Top" Width="586" Background="#330A0A0A"
                          FontFamily="Sitka Banner" FontSize="100" Foreground="#FFF9F9F9"
                           BorderBrush="#00ABADB3"/>
                 <Button HorizontalAlignment="Left" Height="124" Margin="-50,25,0,0" VerticalAlignment="Top" Width="164"
