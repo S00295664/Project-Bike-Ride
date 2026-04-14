@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 
 namespace Project_Bike_Hikes
@@ -56,25 +57,24 @@ namespace Project_Bike_Hikes
 
     public class Ride
     {
+        private static int idCount = 0;
+        [Key]
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public Country Country { get; set; }
+        public List<Difficulty> Diff { get; set; }
+        public List<BikeType> Type { get; set; }
+        public List<Crowds> Crowds { get; set; }
+        public List<Weather> Weather { get; set; }
+        public string BestTime { get; set; }
+        public string Map { get; set; }
+        public int Score { get; set; }
+        public List<string> City { get; set; }
+        public int Size { get; set; }
 
-        public string Name;
-        public Country Country;
-        public List<Difficulty> Diff;
-        public List<BikeType> Type;
-        public List<Crowds> Crowds;
-        public List<Weather> Weather;
-        public string BestTime;
-        public string Map;
-        public int Score;
-        public List<string> City;
-        public int Size;
-        
-
-        public Ride() { }
-        
         public Ride(string name, List<Difficulty> diff,Country country, List<BikeType> types, List<Crowds> crowds, List<Weather> weather, string bestTime, string map, int score, List<string> city, int size)
         {
-
+            Id = idCount++;
             Name = name;
             Country = country;
             Diff = diff;

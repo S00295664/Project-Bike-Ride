@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Project_Bike_Hikes;
 
 namespace DataManagement
@@ -15,7 +12,7 @@ namespace DataManagement
             RideData db = new RideData();
 
             using (db) {
-
+                #region Rides
                 Ride r1 = new Ride("Loire à Vélo", new List<Difficulty> { Difficulty.Easy }, Country.France,
                     new List<BikeType> { BikeType.Road, BikeType.Hybrid }, new List<Crowds> { Crowds.Some },
                     new List<Weather> { Weather.Sunny, Weather.Cloudy }, "Spring/Summer", "", 9,
@@ -516,7 +513,7 @@ namespace DataManagement
                     new List<BikeType> { BikeType.Road }, new List<Crowds> { Crowds.Some },
                     new List<Weather> { Weather.Hot }, "Winter", "", 10,
                     new List<string> { "Las Palmas", "Las Palmas" }, 180);
-
+                #endregion
                 List<Ride> rides = new List<Ride>
                 {
                     r1, r2, r3, r4, r5, r6, r7, r8, r9, r10,

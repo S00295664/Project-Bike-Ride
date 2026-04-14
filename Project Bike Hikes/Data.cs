@@ -11,9 +11,9 @@ namespace Project_Bike_Hikes
         
          public static List<Ride> load_ride(List<Ride> list)
          {
-            return null;
+            
 
-            /*
+            
                  var rides = new List<Ride>
              {
                  new Ride("Loire à Vélo", new List<Difficulty>{Difficulty.Easy}, Country.France,
@@ -474,7 +474,7 @@ namespace Project_Bike_Hikes
                   };
 
                  return rides;
-            */
+            
 
         }
          
