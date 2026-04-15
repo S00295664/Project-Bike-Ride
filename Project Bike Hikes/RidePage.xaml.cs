@@ -56,17 +56,6 @@ namespace Project_Bike_Hikes
                 ;
         }
 
-        private void Score_Init(object sender, EventArgs e)
-        {
-            Score.Text = $"Recommanded :    {actual.Score}/10";
-        }
-
-
-        private void ScoreBar_Initialized_1(object sender, EventArgs e)
-        {
-            ScoreBar.Value = actual.Score;
-        }
-
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             var existing = Data.favorit.FirstOrDefault(r => r.Name == actual.Name);
@@ -93,11 +82,6 @@ namespace Project_Bike_Hikes
             {
                 IsSave.Text = "Remove to favorites";
             }
-        }
-
-        private void YesNo_Initialized(object sender, EventArgs e)
-        {
-            tESnO.Text = "Yes \n\n\n\n\n\n\n\n\n\n\n\nNo ";
         }
     }
 }

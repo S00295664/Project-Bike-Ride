@@ -22,8 +22,7 @@
                       IsMuted="True"
                       MediaEnded="BackgroundVideo_MediaEnded" Margin="0,0,-225,-176"/>
             <ComboBox x:Name="LangBox" HorizontalAlignment="Left" Height="25" Margin="10,11,0,0" VerticalAlignment="Top" Width="104" SelectionChanged="LangBox_SelectionChanged"/>
-            <Button HorizontalAlignment="Left" Height="82" Margin="10,34,0,0" VerticalAlignment="Top" Width="104"
-                    Background="#00DDDDDD" Foreground="White" FontSize="18" Click="Button_Click" BorderBrush="#00707070">
+            <Button HorizontalAlignment="Left" Height="82" Margin="10,34,0,0" VerticalAlignment="Top" Width="104" Background="#00DDDDDD" Foreground="White" FontSize="18" Click="Button_Click" BorderBrush="#00707070">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
                     <Image Source="/Ressource/helmet.png" Width="97" Height="69"/>
                 </StackPanel>

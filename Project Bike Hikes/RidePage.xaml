@@ -13,49 +13,25 @@
         Height="933" Width="1630">
 
     <Grid>
-
-
         <Image Source="/Ressource/gen.png" Stretch="UniformToFill" Panel.ZIndex="0" />
-
-
-        <Viewbox Stretch="Uniform" Panel.ZIndex="1"
-         HorizontalAlignment="Left"
-         VerticalAlignment="Center">
+        <Viewbox Stretch="Uniform" Panel.ZIndex="1" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Grid Width="1630" Height="933">
-                <Button HorizontalAlignment="Left" Height="124" Margin="10,10,0,0" VerticalAlignment="Top" Width="164"
-                        Background="#00DDDDDD" Foreground="White" FontSize="18" Click="Button_Click" BorderBrush="#00707070">
+                <Button HorizontalAlignment="Left" Height="124" Margin="10,10,0,0" VerticalAlignment="Top" Width="164" Background="#00DDDDDD" Foreground="White" FontSize="18" Click="Button_Click" BorderBrush="#00707070">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <Image Source="/Ressource/home.png" Width="155" Height="92"/>
                     </StackPanel>
                 </Button>
-                <Button HorizontalAlignment="Left" Height="133" Margin="1464,20,0,0" VerticalAlignment="Top" Width="166"
-                        Background="#00DDDDDD" Foreground="White" FontSize="18" Click="Save_Click" BorderBrush="#00707070">
+                <Button HorizontalAlignment="Left" Height="133" Margin="1464,20,0,0" VerticalAlignment="Top" Width="166" Background="#00DDDDDD" Foreground="White" FontSize="18" Click="Save_Click" BorderBrush="#00707070">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <Image Source="/Ressource/save.png" Width="158" Height="139"/>
                     </StackPanel>
                 </Button>
                 <Image Source="/Ressource/down.png"  Margin="92,584,1360,147" RenderTransformOrigin="0.5,0.5" ></Image>
-                <TextBox x:Name="RideName" HorizontalAlignment="Left" Height="96" IsHitTestVisible="False"
-                         Margin="414,38,0,0" TextWrapping="Wrap" IsReadOnly="True" Text="TextBox"
-                         VerticalAlignment="Top" Width="902" TextChanged="TextBox_TextChanged"
-                         Background="#330A0A0A" FontSize="72" Foreground="White"
-                         BorderBrush="#00ABADB3" FontFamily="Sitka Banner" TextAlignment="Center"/>
+                <TextBox x:Name="RideName" HorizontalAlignment="Left" Height="96" IsHitTestVisible="False" Margin="414,38,0,0" TextWrapping="Wrap" IsReadOnly="True" Text="TextBox" VerticalAlignment="Top" Width="902" TextChanged="TextBox_TextChanged" Background="#330A0A0A" FontSize="72" Foreground="White" BorderBrush="#00ABADB3" FontFamily="Sitka Banner" TextAlignment="Center"/>
                 <TextBox x:Name="IsSave" HorizontalAlignment="Left" Height="45" IsHitTestVisible="False" Margin="1438,158,0,0" TextWrapping="Wrap" IsReadOnly="True" Text="Isave" VerticalAlignment="Top" Width="218" TextChanged="IsSave_Change" Background="#00CAFFC1" FontSize="24" Foreground="White" BorderBrush="#00ABADB3" FontFamily="Sitka Banner" TextAlignment="Center"/>
-                <TextBox x:Name="Description" HorizontalAlignment="Left" Height="310" IsHitTestVisible="False" Margin="128,195,0,0" TextWrapping="Wrap" Text="Description" IsReadOnly="True" VerticalAlignment="Top" Width="471" Background="#33CAFFC1" FontFamily="Sitka Banner" FontSize="24" Foreground="#FFF9F9F9" BorderBrush="#00ABADB3" Initialized="Description_Initialized"/>
+                <TextBox x:Name="Description" HorizontalAlignment="Left" Height="239" IsHitTestVisible="False" Margin="128,195,0,0" TextWrapping="Wrap" Text="Description" IsReadOnly="True" VerticalAlignment="Top" Width="471" Background="#33CAFFC1" FontFamily="Sitka Banner" FontSize="24" Foreground="#FFF9F9F9" BorderBrush="#00ABADB3" Initialized="Description_Initialized"/>
                 <TextBox x:Name="City1" HorizontalAlignment="Left" Height="60" IsHitTestVisible="False" Margin="128,536,0,0" TextWrapping="Wrap" Text="TextBox" IsReadOnly="True" VerticalAlignment="Top" Width="259" Background="#00000000" FontFamily="Sitka Banner" FontSize="36" Foreground="#FFF9F9F9" BorderBrush="#00ABADB3" Initialized="City_Initialized1"/>
-                <TextBox x:Name="Score" IsHitTestVisible="False" Margin="1223,512,113,367" TextWrapping="Wrap" Text="Score" IsReadOnly="True" Background="#00000000" FontFamily="Sitka Banner" FontSize="36" Foreground="#FFF9F9F9" BorderBrush="#00ABADB3" Initialized="Score_Init"/>
                 <TextBox x:Name="City2" HorizontalAlignment="Left" Height="60" IsHitTestVisible="False" Margin="128,779,0,0" TextWrapping="Wrap" Text="TextBox" IsReadOnly="True" VerticalAlignment="Top" Width="414" Background="#00000000" FontFamily="Sitka Banner" FontSize="36" Foreground="#FFF9F9F9" BorderBrush="#00ABADB3" Initialized="City_Initialized2"/>
-                <TextBox x:Name="tESnO" HorizontalAlignment="Left" Height="592" IsHitTestVisible="False" Margin="1438,247,0,0" TextWrapping="Wrap" Text="In" IsReadOnly="True" VerticalAlignment="Top" Width="56" Background="Transparent" FontFamily="Sitka Banner" FontSize="36" Foreground="White" BorderBrush="#00ABADB3" Initialized="YesNo_Initialized"/>
-                <ProgressBar x:Name="ScoreBar" Minimum="0" Maximum="10"  Margin="1259,510,-199,367" Initialized="ScoreBar_Initialized_1" RenderTransformOrigin="0.5,0.5" >
-                    <ProgressBar.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="-90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </ProgressBar.RenderTransform>
-                </ProgressBar>
             </Grid>
         </Viewbox>
     </Grid>
