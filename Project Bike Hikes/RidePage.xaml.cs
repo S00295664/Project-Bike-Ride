@@ -37,7 +37,7 @@ namespace Project_Bike_Hikes
 
         private void City_Initialized2(object sender, EventArgs e)
         {
-            City2.Text = $"{actual.City[1]}     ({actual.Size}km)   ";
+            City2.Text = $"     {actual.City[1]}\n     ({actual.Size}km)   ";
         }
 
         private void Description_Initialized(object sender, EventArgs e)
@@ -48,12 +48,20 @@ namespace Project_Bike_Hikes
             for (int i = 1; i < actual.Type.Count - 1; i++) bike += " and " + actual.Type.ElementAt(i).ToString();
             string weather = actual.Weather.First().ToString();
             for (int i = 1; i < actual.Weather.Count - 1; i++) bike += " and " + actual.Weather.ElementAt(i).ToString();
+            string crowds = actual.Crowds.First().ToString();
+            for (int i = 1; i < actual.Crowds.Count - 1; i++) crowds += " and " + actual.Crowds.ElementAt(i).ToString();
+            string type = actual.Type.First().ToString();
+            for (int i = 1; i < actual.Type.Count - 1; i++) type += " and " + actual.Type.ElementAt(i).ToString();
 
-            Description.Text = $"The ride of {actual.Name} is a beautiful ride cross the {actual.Country}." +
-                $"\nThe Type of bike recommended for this ride is {bike} and this ride difficulty is considered {diff}. " +
-                $"\nGenerally, the type of weather is {weather}, but that can change, so dont forget to check before." +
-                $"\nThe ride start at the city of {actual.City[0]} and end at {actual.City[1]} : its a {actual.Size}km ({actual.Size* 0.6}miles) ride"
-                ;
+            Description.Text =
+                $"\nThe ride of {actual.Name} is a beautiful route across {actual.Country}." +
+                $"\nIt starts in the city of {actual.City[0]} and ends in {actual.City[1]}. " +
+                $"It is a {actual.Size} km ride ({actual.Size * 0.6} miles)." +
+                $"\n\nThe recommended bike type for this ride is a {bike} bike, and its difficulty is considered {diff}. " +
+                $"\nThe typical weather is {weather}, but it can vary, so don’t forget to check before you go." +
+                $"\n\nCrowd levels are generally {crowds}, and due to the terrain, it is recommended to use a {type}." +
+                $"\nThe {actual.Name} ride is recommended by other users {actual.Score * 10}% of the time.";
+
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -82,6 +90,16 @@ namespace Project_Bike_Hikes
             {
                 IsSave.Text = "Remove to favorites";
             }
+        }
+
+        private void Description1_Initialized(object sender, EventArgs e)
+        {
+
+            Description1.Text =
+                "As always, be careful on the road. " +
+                "Make sure you have proper equipment and, if possible, ride with someone or share your location." +
+                "\n\nRIDE SAFE";
+
         }
     }
 }

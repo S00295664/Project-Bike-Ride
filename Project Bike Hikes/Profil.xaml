@@ -16,14 +16,14 @@
         <Image Source="/Ressource/gen.png" Stretch="UniformToFill" Panel.ZIndex="0" />
         <Viewbox Stretch="Uniform" Panel.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid Width="1630" Height="933">
-                <TextBox x:Name="title" HorizontalAlignment="Left" Height="129" IsHitTestVisible="False" Margin="542,41,0,0" TextWrapping="Wrap" Text="YOUR PROFIL" IsReadOnly="True" VerticalAlignment="Top" Width="586" Background="#330A0A0A" FontFamily="Sitka Banner" FontSize="100" Foreground="#FFF9F9F9" BorderBrush="#00ABADB3"/>
+                <TextBox x:Name="title" HorizontalAlignment="Left" Height="129" IsHitTestVisible="False" Margin="542,41,0,0" TextWrapping="Wrap" Text="YOUR PROFILE" IsReadOnly="True" VerticalAlignment="Top" Width="604" Background="#330A0A0A" FontFamily="Sitka Banner" FontSize="100" Foreground="#FFF9F9F9" BorderBrush="#00ABADB3"/>
                 <Button HorizontalAlignment="Left" Height="124" Margin="-50,25,0,0" VerticalAlignment="Top" Width="164" Background="#00DDDDDD" Foreground="White" FontSize="18" Click="Button_Click" BorderBrush="#00707070">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <Image Source="/Ressource/home.png" Width="155" Height="92"/>
                     </StackPanel>
                 </Button>
                 <ListBox x:Name="Favorits" HorizontalAlignment="Center" Height="258" Margin="0,251,0,0" VerticalAlignment="Top" Width="1244" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#33808080" Foreground="White" SelectionChanged="Fav_SelectionChanged" FontSize="24"     />
-                <TextBlock HorizontalAlignment="Left" Margin="193,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" FontStyle="Italic" FontFamily="Sitka Banner" Width="220" Foreground="White" Background="#66484848" Height="57"><Run Text="Favorits"/><Run Language="en-gb" Text=" :"/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Margin="193,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" FontStyle="Italic" FontFamily="Sitka Banner" Width="220" Foreground="White" Background="#66484848" Height="57" Text="Favorite :"/>
                 <TextBlock HorizontalAlignment="Left" Margin="193,522,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" FontStyle="Italic" FontFamily="Sitka Banner" Width="220" Foreground="White" Background="#66484848" Height="57"><Run Text="History"/><Run Language="en-gb" Text=" :"/></TextBlock>
                 <Image Source="/Ressource/heart.png" Margin="1268,195,116,593" RenderTransformOrigin="0.5,0.5">
                     <Image.RenderTransform>
